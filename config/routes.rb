@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "documents#index"
+
+  direct :cdn_image do |model, _options|
+    "https://d39cmcvgzafg89.cloudfront.net/#{model.blob.key}"
+  end
 end

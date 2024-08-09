@@ -3,5 +3,9 @@
     <strong class="block font-medium mb-1">Title:</strong>
     <%= document.title %>
   </p>
-
+  <% if document.picture.present? %>
+    <p class="my-5">
+      <%= image_tag cdn_image_url(document.picture) %>
+    </p>
+  <% end %>
 </div>
